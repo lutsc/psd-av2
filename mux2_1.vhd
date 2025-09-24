@@ -1,4 +1,4 @@
--- MUX 2 para 1
+-- MUX 2x1
 library IEEE;
 use IEEE.std_logic_1164.all;
 
@@ -12,8 +12,8 @@ end mux2_1bit;
 
 architecture arch_1 of mux2_1bit is
 begin
-  process(sel, a, b) is
+  process(i_sel, i_a, i_b) is
   begin
-    q <= (a and not sel) or (b and sel);
+    o_q <= (i_a and not i_sel) or (i_b and i_sel);
   end process;
 end arch_1;
