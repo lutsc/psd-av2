@@ -17,9 +17,11 @@ begin
   process(i_sel, i_q) is
   begin
     if(i_sel = '0') then
-        o_a <= i_q
+        o_a <= i_q;
+        o_b <= '0';
     elsif(i_sel = '1') then
-        o_b <= i_q
+        o_b <= i_q;
+        o_a <= '0';
     end if;
   end process;
 end architecture;
