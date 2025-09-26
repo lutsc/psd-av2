@@ -1,4 +1,4 @@
--- DEMUX 1x2
+-- DEMUX 1x2bit
 library IEEE;
 use IEEE.std_logic_1164.all;
 
@@ -9,8 +9,9 @@ port(
   i_q: in std_logic;        -- entrada q
   o_a: out std_logic;       -- saída a
   o_b: out std_logic);      -- saída b
-end demux1_2bit;
+end entity;
 
+-- Arquitetura
 architecture arch_demux1_2bit of demux1_2bit is
 begin
   process(i_sel, i_q) is
@@ -21,4 +22,4 @@ begin
         o_b <= i_q
     end if;
   end process;
-end arch_demux1_2bit;
+end architecture;

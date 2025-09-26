@@ -2,25 +2,25 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
  
-entity testbench_mux2_1 is
--- empty
-end testbench_mux2_1; 
+entity testbench_mux2_1bit is
+end entity; 
 
-architecture tb of testbench is
+architecture tb of testbench_mux2_1bit is
 
--- Component DUT
+-- Componente DUT
 component mux2_1bit is
 port(
   i_sel: in std_logic;    -- entrada seletor
   i_a: in std_logic;      -- entrada a
   i_b: in std_logic;      -- entrada b
   o_q: out std_logic);    -- saída q
-end mux2_1bit;
+end component;
 
+-- Sinais temporários
 signal w_sel, w_a, w_b, w_q: std_logic;
 
 begin
-  -- Conecta no DUT
+  -- Conectando os sinais no DUT
   DUT: mux2_1bit port map(w_sel, w_a, w_b, w_q);
 
   process

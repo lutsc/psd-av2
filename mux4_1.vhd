@@ -1,4 +1,4 @@
--- MUX 4x1
+-- MUX 4x1bit
 library IEEE;
 use IEEE.std_logic_1164.all;
 
@@ -11,8 +11,9 @@ port(
   i_d: in std_logic;                          -- entrada d
   i_c: in std_logic;                          -- entrada c
   o_q: out std_logic);                        -- saída q
-end mux4_1bit;
+end entity;
 
+-- Arquitetura
 architecture arch_mux4_1bit of mux4_1bit is
   -- Declaração de componentes
   component mux2_1bit is
@@ -32,17 +33,17 @@ architecture arch_mux4_1bit of mux4_1bit is
     i_sel => i_sel(0),
     i_a => i_a,
     i_b => i_b,
-    w_temp0 => o_q);
+    o_q => w_temp0 );
 
   u_1: mux2_1bit port map(
     i_sel => i_sel(0),
     i_a => i_c,
     i_b => i_d,
-    w_temp1 => o_q);
+    o_q => w_temp1);
 
   u_3: mux2_1bit port map(
     i_sel => i_sel(1),
     i_a => w_temp0;
     i_b => w_temp1;
     o_q => o_q);
-end arch_mux4_1bit;
+end architecture;
