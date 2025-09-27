@@ -5,6 +5,7 @@ use IEEE.std_logic_1164.all;
 entity testbench_demux1_4bit is
 end entity; 
 
+-- Arquitetura
 architecture tb of testbench_demux1_4bit is
 
 -- Componente para DUT
@@ -72,4 +73,4 @@ begin
     assert false report "Teste feito." severity note;
     wait;
   end process;
-end tb;
+end architecture;

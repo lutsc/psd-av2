@@ -5,23 +5,15 @@ use IEEE.std_logic_1164.all;
 -- Declaração das entradas e saídas
 entity demux1_2bit is
 port(
-  i_sel: in std_logic;      -- entrada seletor
-  i_q: in std_logic;        -- entrada q
-  o_a: out std_logic;       -- saída a
-  o_b: out std_logic);      -- saída b
+  i_sel: in std_logic;    -- entrada seletor
+  i_q: in std_logic;      -- entrada q
+  o_a: out std_logic;     -- saída a
+  o_b: out std_logic);    -- saída b
 end entity;
 
 -- Arquitetura
 architecture arch_demux1_2bit of demux1_2bit is
 begin
-  process(i_sel, i_q) is
-  begin
-    if(i_sel = '0') then
-        o_a <= i_q;
-        o_b <= '0';
-    elsif(i_sel = '1') then
-        o_b <= i_q;
-        o_a <= '0';
-    end if;
-  end process;
+  o_a <= i_q when i_sel='0' else '0';
+  o_b <= i_q when i_sel='1' else '0';
 end architecture;

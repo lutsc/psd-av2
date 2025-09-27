@@ -5,6 +5,7 @@ use IEEE.std_logic_1164.all;
 entity testbench_demux1_2bit is
 end entity;
 
+-- Arquitetura
 architecture tb of testbench_demux1_2bit is
 
 -- Componente para DUT
@@ -29,31 +30,26 @@ begin
 
   process
   begin
-  	w_sel <= '0';
-    w_q <= '0';
+  	w_sel <= '0'; w_q <= '0';
     wait for 1 ns;
     assert(w_a='0' and w_b='0') report "Falhou em 0/0" severity error;
   
-    w_sel <= '0';
-    w_q <= '1';
+    w_sel <= '0'; w_q <= '1';
     wait for 1 ns;
     assert(w_a='1' and w_b='0') report "Falhou em 0/1" severity error;
 
-    w_sel <= '1';
-    w_q <= '1';
+    w_sel <= '1'; w_q <= '1';
     wait for 1 ns;
     assert(w_a='0' and w_b='1') report "Falhou em 1/1" severity error;
   
-    w_sel <= '1';
-    w_q <= '0';
+    w_sel <= '1'; w_q <= '0';
     wait for 1 ns;
     assert(w_a='0' and w_b='0') report "Falhou em 1/0" severity error;
 
     -- Zerando entradas
-    w_sel <= '0';
-    w_q <= '0';
+    w_sel <= '0'; w_q <= '0';
 
     assert false report "Teste feito." severity note;
     wait;
   end process;
-end tb;
+end architecture;

@@ -5,8 +5,9 @@ use IEEE.std_logic_1164.all;
 entity testbench is
 end entity; 
 
+-- Arquitetura
 architecture tb of testbench is
-
+  
 -- Componente para DUT
 component design is
   port(
@@ -76,4 +77,4 @@ begin
     assert false report "Teste feito." severity note;
     wait;
   end process;
-end tb;
+end architecture;
