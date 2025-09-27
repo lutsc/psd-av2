@@ -36,13 +36,13 @@ architecture arch_design of design is
 
   -- Instânciação dos componentes
   begin
-  u_0: mux2_1bit port map(
+  u_mux: mux2_1bit port map(
     i_sel => i_sel(0),
     i_a => i_a,
     i_b => i_b,
     o_q => w_temp);
 
-  u_1: demux1_2bit port map(
+  u_demux: demux1_2bit port map(
     i_sel => i_sel(1),
     i_q => w_temp,
     o_a => o_a,

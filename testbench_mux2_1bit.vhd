@@ -1,4 +1,4 @@
--- Testbench de MUX 2x1
+-- Testbench de MUX 2x1bit
 library IEEE;
 use IEEE.std_logic_1164.all;
  
@@ -7,7 +7,7 @@ end entity;
 
 architecture tb of testbench_mux2_1bit is
 
--- Componente DUT
+-- Componente para DUT
 component mux2_1bit is
 port(
   i_sel: in std_logic;    -- entrada seletor
@@ -21,7 +21,11 @@ signal w_sel, w_a, w_b, w_q: std_logic;
 
 begin
   -- Conectando os sinais no DUT
-  DUT: mux2_1bit port map(w_sel, w_a, w_b, w_q);
+  DUT: mux2_1bit port map(
+    i_sel => w_sel,
+    i_a => w_a,
+    i_b => w_b,
+    o_q => w_q);
 
   process
   begin
@@ -73,7 +77,7 @@ begin
     wait for 1 ns;
     assert(w_q='1') report "Falhou em 1/1/1" severity error;
     
-    -- Zera entradas
+    -- Zerando entradas
     w_sel <= '0';
     w_a <= '0';
     w_b <= '0';

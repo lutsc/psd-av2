@@ -7,7 +7,7 @@ end entity;
 
 architecture tb of testbench_demux1_2bit is
 
--- Componente DUT
+-- Componente para DUT
 component demux1_2bit is
 port(
   i_sel: in std_logic;    -- entrada seletor
@@ -21,7 +21,11 @@ signal w_sel, w_q, w_a, w_b: std_logic;
 
 begin
   -- Conectando os sinais no DUT
-  DUT: demux1_2bit port map(w_sel, w_q, w_a, w_b);
+  DUT: demux1_2bit port map(
+    i_sel => w_sel,
+    i_q => w_q,
+    o_a => w_a,
+    o_b => w_b);
 
   process
   begin
@@ -29,7 +33,6 @@ begin
     w_q <= '0';
     wait for 1 ns;
     assert(w_a='0' and w_b='0') report "Falhou em 0/0" severity error;
-    --assert(w_b='0') report "Falhou em 0/0" severity error;
   
     w_sel <= '0';
     w_q <= '1';
@@ -46,7 +49,7 @@ begin
     wait for 1 ns;
     assert(w_a='0' and w_b='0') report "Falhou em 1/0" severity error;
 
-    -- Zera entradas
+    -- Zerando entradas
     w_sel <= '0';
     w_q <= '0';
 

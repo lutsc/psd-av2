@@ -43,7 +43,7 @@ architecture arch_mux4_1bit of mux4_1bit is
 
   u_3: mux2_1bit port map(
     i_sel => i_sel(1),
-    i_a => w_temp(0);
-    i_b => w_temp(1);
+    i_a => w_temp(0),
+    i_b => w_temp(1),
     o_q => o_q);
 end architecture;
