@@ -10,13 +10,13 @@ architecture tb of testbench is
   
 -- Componente para DUT
 component design is
-  port(
-  i_sel: in std_logic_vector(1 downto 0);     -- seletor    [mux (0), demux (1)]
-  i_a: in std_logic;                          -- entrada a  [mux]
-  i_b: in std_logic;                          -- entrada b  [mux]
-  o_a: out std_logic;                         -- saída a    [demux]
-  o_b: out std_logic);                        -- saída b    [demux]
-  end component;
+port(
+i_sel: in std_logic_vector(1 downto 0);     -- seletor    [mux (0), demux (1)]
+i_a: in std_logic;                          -- entrada a  [mux]
+i_b: in std_logic;                          -- entrada b  [mux]
+o_a: out std_logic;                         -- saída a    [demux]
+o_b: out std_logic);                        -- saída b    [demux]
+end component;
 
 -- Sinais temporários
 signal w_sel: std_logic_vector(1 downto 0);

@@ -2,7 +2,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
--- Declaração das entradas e saídas
+-- Entidade
 entity demux1_2bit is
 port(
   i_sel: in std_logic;    -- entrada seletor

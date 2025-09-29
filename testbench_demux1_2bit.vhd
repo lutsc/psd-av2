@@ -1,7 +1,8 @@
 -- Testbench de DEMUX 1x2bit
 library IEEE;
 use IEEE.std_logic_1164.all;
- 
+
+-- Entidade
 entity testbench_demux1_2bit is
 end entity;
 

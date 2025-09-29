@@ -1,7 +1,8 @@
 -- Testbench de DEMUX 1x4bit
 library IEEE;
 use IEEE.std_logic_1164.all;
- 
+
+-- Entidade
 entity testbench_demux1_4bit is
 end entity; 
 
@@ -35,39 +36,39 @@ begin
 
   process
   begin
-  	w_sel(0) <= '0';
-  	w_sel(1) <= '0';
+    w_sel(0) <= '0';
+    w_sel(1) <= '0';
     w_q <= '0';
     wait for 1 ns;
     assert(w_a='0' and w_b='0' and w_c='0' and w_d='0') report "Falhou em 0/0/0" severity error;
 
-  	w_sel(0) <= '0';
-  	w_sel(1) <= '0';
+    w_sel(0) <= '0';
+    w_sel(1) <= '0';
     w_q <= '1';
     wait for 1 ns;
     assert(w_a='1' and w_b='0' and w_c='0' and w_d='0') report "Falhou em 0/0/1" severity error;
 
-  	w_sel(0) <= '0';
-  	w_sel(1) <= '1';
+    w_sel(0) <= '0';
+    w_sel(1) <= '1';
     w_q <= '1';
     wait for 1 ns;
     assert(w_a='0' and w_b='1' and w_c='0' and w_d='0') report "Falhou em 0/1/1" severity error;
 
-  	w_sel(0) <= '1';
-  	w_sel(1) <= '0';
+    w_sel(0) <= '1';
+    w_sel(1) <= '0';
     w_q <= '1';
     wait for 1 ns;
     assert(w_a='0' and w_b='0' and w_c='1' and w_d='0') report "Falhou em 1/0/1" severity error;
 
-  	w_sel(0) <= '1';
-  	w_sel(1) <= '1';
+    w_sel(0) <= '1';
+    w_sel(1) <= '1';
     w_q <= '1';
     wait for 1 ns;
     assert(w_a='0' and w_b='0' and w_c='0' and w_d='1') report "Falhou em 1/0/1" severity error;
 
     -- Zerando entradas
-  	w_sel(0) <= '0';
-  	w_sel(1) <= '0';
+    w_sel(0) <= '0';
+    w_sel(1) <= '0';
     w_q <= '0';
 
     assert false report "Teste feito." severity note;

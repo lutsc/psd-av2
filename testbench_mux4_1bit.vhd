@@ -1,7 +1,8 @@
 -- Testbench de MUX 4x1bit
 library IEEE;
 use IEEE.std_logic_1164.all;
- 
+
+-- Entidade
 entity testbench_mux4_1bit is
 end entity; 
 

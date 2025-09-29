@@ -1,12 +1,14 @@
 -- Testbench de MUX 2x1bit
 library IEEE;
 use IEEE.std_logic_1164.all;
- 
+
+-- Entidade
 entity testbench_mux2_1bit is
 end entity; 
 
 -- Arquitetura
 architecture tb of testbench_mux2_1bit is
+
 -- Componente para DUT
 component mux2_1bit is
 port(
